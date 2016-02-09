@@ -4,8 +4,6 @@ from django.http import HttpResponse
 
 from .models import Question
 
-from django.template import loader, RequestContext
-
 # Create your views here.
 
 def index(request):
@@ -15,7 +13,8 @@ def index(request):
 
 
 def detail(request, question_id):
-    return HttpResponse('This is the detail vew of the question: %s' % question_id)
+    question = Question.objects.get(pk=question_id)
+    return render(request, 'polls/detail.html', {'question': question})
 
 
 
