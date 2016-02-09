@@ -6,8 +6,14 @@
 </head>
 <body>
 
-{% block main_content %}
-{% endblock %}
+    <hr>
+    <p>Header</p>
+    <hr>
+
+    {% block main_content %}
+    {% endblock %}
+
+    {% include "polls/footer.html" %}
 
 </body>
 </html>
